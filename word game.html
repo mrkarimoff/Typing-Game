@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word game</title>
+    <link rel="stylesheet" href="./word game.css">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-back">
+        <div class="modal">
+            <button onclick="showModal()" class="x-box">x</button>
+            <div class="modal-body">
+                <h1>Game Over</h1>
+                <div class="level-cont">
+
+                </div>
+                <div class="score-cont">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="showModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- Game -->
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="score-bar">
+                    <h2 id="time-place">Time:</h2>
+                    <h2 id="level-place">Level:</h2>
+                </div>
+                <div class="word-bar">
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="card-body">
+                <form autocomplete="off">
+                    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                    <input disabled="disabled" placeholder="write the words here" onchange="changeWord()" id="inp"
+                        type="text">
+                </form>
+            </div>
+            <div class="card-footer">
+                <button id="play-btn" onclick="startGame()">Play</button>
+                <button disabled="disabled" id="pause-btn" onclick="pauseGame()">Pause</button>
+                <button onclick="showModal()">Quit</button>
+            </div>
+        </div>
+    </div>
+    <select onchange="getOption()" class="select-box" id="select-box">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <!-- Game -->
+
+    <script src="./word game.js"></script>
+</body>
+
+</html>
